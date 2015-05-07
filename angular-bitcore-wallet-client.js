@@ -1970,7 +1970,7 @@ var Utils = {};
 var _UNITS = {
   btc: {
     toSatoshis: 100000000,
-    decimals: 6
+    decimals: 2
   },
   bit: {
     toSatoshis: 100,
