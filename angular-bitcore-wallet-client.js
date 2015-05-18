@@ -3513,9 +3513,9 @@ function PaymentProtocol() {
 PaymentProtocol.PAYMENT_REQUEST_MAX_SIZE = 50000;
 PaymentProtocol.PAYMENT_MAX_SIZE = 50000;
 PaymentProtocol.PAYMENT_ACK_MAX_SIZE = 60000;
-PaymentProtocol.PAYMENT_REQUEST_CONTENT_TYPE = 'application/bitcoin-paymentrequest';
-PaymentProtocol.PAYMENT_CONTENT_TYPE = 'application/bitcoin-payment';
-PaymentProtocol.PAYMENT_ACK_CONTENT_TYPE = 'application/bitcoin-paymentack';
+PaymentProtocol.PAYMENT_REQUEST_CONTENT_TYPE = 'application/digibyte-paymentrequest';
+PaymentProtocol.PAYMENT_CONTENT_TYPE = 'application/digibyte-payment';
+PaymentProtocol.PAYMENT_ACK_CONTENT_TYPE = 'application/digibyte-paymentack';
 
 // https://www.google.com/search?q=signatureAlgorithm+1.2.840.113549.1.1.1
 // http://msdn.microsoft.com/en-us/library/windows/desktop/aa379057(v=vs.85).aspx
@@ -3866,7 +3866,7 @@ PaymentProtocol.prototype.verify = function(returnTrust) {
 };
 
 function magicHash(str) {
-  var magicBytes = new Buffer('Bitcoin Signed Message:\n');
+  var magicBytes = new Buffer('Digibyte Signed Message:\n');
   var prefix1 = varintBufNum(magicBytes.length);
   var message = new Buffer(str);
   var prefix2 = varintBufNum(message.length);
@@ -23407,7 +23407,7 @@ URI.isValid = function(arg, knownParams) {
 URI.parse = function(uri) {
   var info = URL.parse(uri, true);
 
-  if (info.protocol !== 'digibyte:') {
+  if (info.protocol !== 'web+digibyte:') {
     throw new TypeError('Invalid digibyte URI');
   }
 
@@ -23506,7 +23506,7 @@ URI.prototype.toString = function() {
   _.extend(query, this.extras);
 
   return URL.format({
-    protocol: 'digibyte:',
+    protocol: 'web+digibyte:',
     host: this.address,
     query: query
   });
@@ -37618,7 +37618,7 @@ module.exports={
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/bitpay/bitcore.git"
+    "url": "https://github.com/DigiByte-Team/bitcore.git"
   },
   "browser": {
     "request": "browser-request"
