@@ -1,13 +1,13 @@
 {
-  "name": "angular-bitcore-wallet-client",
+  "name": "angular-digicore-wallet-client",
   "version": "0.1.1",
-  "description": "AngularJS module for bitcore-wallet-client library",
+  "description": "AngularJS module for digicore-wallet-client library",
   "author": "DigiByte Holdings Inc",
   "license": "MIT",
   "main": "./index.js",
   "repository": {
     "type": "git",
-    "url": "git@github.com:DigiByte-Team/angular-bitcore-wallet-client.git"
+    "url": "git@github.com:DigiByte-Team/angular-digicore-wallet-client.git"
   },
   "ignore": [
     "**/.*",
